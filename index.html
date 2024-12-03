@@ -50,6 +50,10 @@
     <style>
      .mySlides {display:none;}
     </style>
+
+    <title>Grover's Algorithim</title>
+    <script type=”text/javascript” src=https://www.gstatic.com/charts/loader.js></script>
+    
    </head>
 
    <body>
@@ -164,7 +168,36 @@
       Shor’s algorithm similar disadvantages to Grover’s but it also has specificity issues. Particularly in targeting and prediction. The algorithm is primarily focused 
       on factoring making its utility within financial context more limited and specific compared to Grover’s. Furthermore, one of Shor’s strengths for efficiently 
       tackling large factoring efficiently poses as a huge threat to already existing cryptographic methods leading to massive security risks and greater need for financial 
-      institution to implement new cryptographic methods. (Graph in excel) (2 more references)
+      institution to implement new cryptographic methods. (Graph in excel)
+
+      <div id="chart_div" style="width: 900px; height: 500px;"></div>
+      
+      <script type=”text/javascript”>
+       google.charts.load(‘current’, { ‘packages’: [‘corechart’] });
+       google.charts.setOnLoadCallback(drawChart);
+
+       function drawChart() {
+       var data = new google.visualization.DataTable();
+       data.addColumn('number', 'Age');
+       data.addColumn('number', 'Salary');
+       data.addRows([
+       [25, 40000],
+       [30, 50000],
+       [35, 60000],
+       [40, 75000],
+       [45, 80000],
+       [50, 90000]
+       ]);
+       var options = {
+       title: 'Age vs. Salary',
+       hAxis: { title: 'Age' },
+       vAxis: { title: 'Salary' }
+       };
+       var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+       chart.draw(data, options);
+       }
+      </script>
+       
      </pre>
 
     <hr>
@@ -183,10 +216,10 @@
     <hr>
      <p class "ex1">
       <pre>
-       <a href="https://doi.org/10.1038/nature08812">Ladd, T. D., Jelezko, F., Laflamme, R., Nakamura, Y., O’Brien, J. L., & Monroe, C. (2010). <i>Quantum computers.</i> Nature (London), 464(7285), 45–53.
-       <a href="https://doi.org/10.12928/telkomnika.v18i3.14755">Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020). <i>Web-app realization of Shor’s quantum factoring algorithm and Grover’s quantum search algorithm.</i> Telkomnika, 18(3), 1319–1330.
-       <a href="https://doi.org/10.1126/science.aad9480">Monz, T., Nigg, D., Martinez, E. A., Brandl, M. F., Schindler, P., Rines, R., Wang, S. X., Chuang, I. L., & Blatt, R. (2016). <i>Realization of a scalable Shor algorithm.</i> Science (American Association for the Advancement of Science), 351(6277), 1068–1070
-       <a href="https://doi.org/10.1038/s41467-017-01904-7"> Figgatt, C., Maslov, D., Landsman, K. A., Linke, N. M., Debnath, S., & Monroe, C. (2017). <i>Complete 3-Qubit Grover search on a programmable quantum computer.</i> Nature Communications, 8(1), 1918–1919.
+       <a href="https://doi.org/10.1038/nature08812">Ladd, T. D., Jelezko, F., Laflamme, R., Nakamura, Y., O’Brien, J. L., & Monroe, C. (2010). <i>Quantum computers.</i> Nature (London), 464(7285), 45–53.</a>
+       <a href="https://doi.org/10.12928/telkomnika.v18i3.14755">Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020). <i>Web-app realization of Shor’s quantum factoring algorithm and Grover’s quantum search algorithm.</i> Telkomnika, 18(3), 1319–1330.</a>
+       <a href="https://doi.org/10.1126/science.aad9480">Monz, T., Nigg, D., Martinez, E. A., Brandl, M. F., Schindler, P., Rines, R., Wang, S. X., Chuang, I. L., & Blatt, R. (2016). <i>Realization of a scalable Shor algorithm.</i> Science (American Association for the Advancement of Science), 351(6277), 1068–1070.</a>
+       <a href="https://doi.org/10.1038/s41467-017-01904-7"> Figgatt, C., Maslov, D., Landsman, K. A., Linke, N. M., Debnath, S., & Monroe, C. (2017). <i>Complete 3-Qubit Grover search on a programmable quantum computer.</i> Nature Communications, 8(1), 1918–1919.</a>
       </pre>
      
      
