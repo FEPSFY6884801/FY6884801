@@ -36,7 +36,7 @@
      }
 
      body {
-      font-family: Calibri, sans-serif;
+      font-family: Calibri;
       background-color: #FFFFFF;
       margin-left: 50px;
      }
@@ -241,9 +241,11 @@
     <h3 id= "Quantum Methodologies" style="font-family: Calibri;"><b>Quantum Methodologies</b></h3>
     <hr>
     <p class "ex1">
-     <!-- ADD GRAPHS HERE -->
+     
+     
+
      <pre>
-     <h4 style="font-family: Calibri;">Grover's Algorithim:</h4> 
+     <h4 style="font-family: Calibri;">Grover's Algorithim (Figure 1):</h4> 
       Grover's alogrithim is designed to search an unsorted database or solving problems with much greater efficiency than classical algorithims <a href="https://doi.org/10.1038/s41467-017-01904-7">(Figgatt et al., 2017)</a>.
       It can be used to search through an unstructred database containing N items to find a specific item that satisfies the condition. What makes it stand out to 
       classical alogorithims is they tend to require an average of O(N) evaluations to find the key item but Grover's can do it in O(N^1/2) evaluations. This 
@@ -251,13 +253,20 @@
       not directly predict outcomes, in predicitve analysis it can identify the most impactful features in datasets used for stock price predictions. It can
       also be used for alogorthimic trading or HFT (high frequency trading) as it cna ehance trading strategies by quickly searching for the best trading signals.
 
-     <h4 style="font-family: Calibri;">Shor's Algorithim:</h4>
+     <h4 style="font-family: Calibri;">Shor's Algorithim (Figure 2):</h4>
       Shor's alogorithim is designed for integer facorisation, which is the process of decompsoing a composite number into its prime factors. This specific 
       alogrithim has significant implications for systems that rely on teh difficulty of ffactoring large numbers. The genral number field sieve, which is a
       classical algorithim for factorising, operates in exponential time whereas Shor's can factoring is polynominal time (O((LogN)^3))). Not only does it use 
       superposition and entanglemt, allowing multiple possibilites to be explored simulataneously but it also uses quantum fourier transform. Which is used to 
       analyse the frequency components of a signal. These both make it faster and more efficient to classical alogrithims <a href="https://doi.org/10.1126/science.aad9480">(Monz et al., 2016)</a>.
      </pre>
+
+     <div class="chart-container">
+       <h4>Figure 1: Comparison of Classical search and Grover's algorithm</h4>
+       <div id="chart_div1" class="chart"></div>
+       <h4>Figure 2: Complexity comparisson for factorisation alogorithms</h4>
+       <div id="chart_div2" class="chart"></div>
+      </div>
 
     <hr>
     <h3 id= "Analysis" style="font-family: Calibri;"><b>Analysis</b></h3>
@@ -277,13 +286,7 @@
       institution to implement new cryptographic methods. (Graph in excel)
       </pre>
 
-      <div class="chart-container">
-       <h4>Figure 1: Comparison of Classical search and Grover's algorithm</h4>
-       <div id="chart_div1" class="chart"></div>
-       <h4>Figure 2: Complexity comparisson for factorisation alogorithms</h4>
-       <div id="chart_div2" class="chart"></div>
-      </div>
-
+      
 
 
 
@@ -297,6 +300,8 @@
       computing being necessary to overcome these challenges to be able to fully utilise both these algorithms to their full capabilities
 
      </pre>
+   
+     
 
     <hr>
     <h3 id= "References"style="font-family: Calibri;"><b>References</b></h3>
