@@ -70,7 +70,7 @@
 
         function drawChart1() {
         
-            console.log("Drawing chart 1...");
+     
             var data = new google.visualization.DataTable();
             data.addColumn('number', 'N');
             data.addColumn('number', 'Classical Search (O(N))');
@@ -114,7 +114,7 @@
             chart.draw(data, options);
         }
      function drawChart2() {
-            console.log("Drawing Chart 2...");
+
             var data = google.visualization.arrayToDataTable([
                 ['N', 'Trial Division O(SQRT(N))', 'Elliptic Curve O(N^1/4)', 'Quadratic Sieve O(e^SQRT(log N))', 'Shor\'s Algorithm'],
                 [1, 1.00, 1.00, 1.00, 0],
@@ -274,12 +274,12 @@
       institution to implement new cryptographic methods. (Graph in excel)
       </pre>
 
-      <div class="chart-container">
+   
        <h4>Figure 1: Comparison of Classical search and Grover's algorithm</h4>
        <div id="chart_div1" class="chart"></div>
+    
        <h4>Figure 2: Complexity comparisson for factorisation alogorithms</h4>
        <div id="chart_div2" class="chart"></div>
-      </div>
     
        
    
