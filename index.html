@@ -1,322 +1,245 @@
  <!DOCTYPE  html>
 
  <html>
-   <head>
-
-    <img src = "WebBanner2023.png" alt="Banner" width="1200" height="300">
-     <h1><b> ENG0018 Computer Laboratory 20203/24 </b></h1>
-     <h2>Student URN:6884801 </h2>
-    <hr>
-    <h2 style="font-family: Calibri;"><b>Conference paper: To What Extent Are Quantum Computer Be Better At Financial Targeting And Prediction, To Classical Algorithms</b></h2>
-    <hr>
-    <!style for tables>
-    <style>
-      table{
-       font-family: arial, sans-serif;
-       border-collapse: collapse;
-       width: 30%;
-
-      }
-
-     td,th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-     }
-
-     tr:nth-child(even){
-      background-color: #dddddd;
-     }
-
-
-    </style>
-    <style>
-     p.ex1{
-      margin-left: 250px;
-      font-family: Calibri;
-     }
-
-     body {
-      font-family: Calibri;
-      background-color: #FFFFFF;
-      margin-left: 50px;
-     }
-     .chart-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-     }
-     .chart{
-      width: 900px;
-      height: 500px;
-     }
-
-
-    </style>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart', 'line']});
-        google.charts.setOnLoadCallback(function() {
-         drawChart1();
-         drawChart2();
-        });
-
-
-        function drawChart1() {
-
-            console.log("Drawing chart 1...");
-     
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'N');
-            data.addColumn('number', 'Classical Search (O(N))');
-            data.addColumn('number', "Grover's Algorithm (O(√N))");
-
-
-            data.addRows([
-                [1, 1, 1],
-                [2, 2, 1.41],
-                [3, 3, 1.73],
-                [4, 4, 2],
-                [5, 5, 2.24],
-                [6, 6, 2.45],
-                [7, 7, 2.65],
-                [8, 8, 2.83],
-                [9, 9, 3],
-                [10, 10, 3.16],
-                [20, 20, 4.47],
-                [30, 30, 5.47],
-                [40, 40, 6.32],
-                [50, 50, 7.07],
-                [59, 59, 7.68],
-                [60, 60, 7.74],
-                [70, 70, 8.36],
-                [80, 80, 8.94],
-                [90, 90, 9.48],
-                [100, 100, 10]
-            ]);
-
-            var options = {
-                title: '',
-                width: 900,
-                height: 500,
-                hAxis: {title: 'N (Size of Dataset)',minValue: 0},
-                vAxis: {title: 'Number of Operations',minValue: 0},
-                series: {0: { color: '#1c91c0' },1: { color: '#f4511e' }},
-                pointsVisible: true,
-                curveType: 'function'
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
-            chart.draw(data, options);
-        }
-     function drawChart2() {
-            console.log("Drawing Chart 2...");
-            var data = google.visualization.arrayToDataTable([
-                ['N', 'Trial Division O(SQRT(N))', 'Elliptic Curve O(N^1/4)', 'Quadratic Sieve O(e^SQRT(log N))', 'Shor\'s Algorithm'],
-                [1, 1.00, 1.00, 1.00, 0],
-                [2, 1.41, 1.19, 1.73, 0.03],
-                [3, 1.73, 1.32, 2.00, 0.11],
-                [4, 2.00, 1.41, 2.17, 0.22],
-                [5, 2.24, 1.50, 2.31, 0.34],
-                [6, 2.45, 1.57, 2.42, 0.47],
-                [7, 2.65, 1.63, 2.51, 0.60],
-                [8, 2.83, 1.68, 2.59, 0.74],
-                [9, 3.00, 1.73, 2.66, 0.87],
-                [10, 3.16, 1.78, 2.72, 1.00],
-                [20, 4.47, 2.11, 3.13, 2.20],
-                [30, 5.48, 2.34, 3.37, 3.22],
-                [40, 6.32, 2.51, 3.55, 4.11],
-                [50, 7.07, 2.66, 3.68, 4.90],
-                [60, 7.75, 2.78, 3.79, 5.62],
-                [70, 8.37, 2.89, 3.89, 6.28],
-                [80, 8.94, 2.99, 3.97, 6.89],
-                [90, 9.51, 3.09, 4.06, 7.46],
-                [100, 10.05, 3.19, 4.15, 7.98]
-
-            ]);
-
-            var options = {
-                title: '',
-
-                curveType: 'function',
-                legend: { position: 'bottom' },
-                width: 900,
-                height: 500,
-                pointSize: 4,
-                colors:['#1b9e77', '#d95f02', '#7570b3', '#e7298a'],
-                hAxis: {title: 'N'},
-                vAxis: {title: 'Time Complexity'}
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
-            chart.draw(data, options);
-        }
-
-    </script>
-
-   </head>
-
-   <body>
-    <hr>
-
-     <!table of contents>
-     <table>
-      <tr>
-       <th><h1>Table of contents</h1></th>
-      </tr>
-      <tr>
-       <td><a href="#Abstract">Abstract</td>
-      </tr>
-      <tr>
-       <td><a href="#Analysis and discussion">Analysis and discussion</td>
-      </tr>
-      <tr>
-       <td><a href="#Introduction">Introduction</td>
-      </tr>
-       <tr>
-       <td><a href="#Quantum Methodologies">Quantumn Methodologies</td>
-      </tr>
-       <tr>
-       <td><a href="#Analysis">Analysis</td>
-      </tr>
-      <tr>
-       <td><a href="#Conclusion">Conclusion</td>
-      </tr>
-      <tr>
-       <td><a href="#References">Reference</td>
-      </tr>
-     </table>
-
-     <hr>
-
-     <p id="date&Time"></p>
-     <script>
-      const d=new Date();
-      document.getElementById("date&Time").innerHTML = d;
-
-
-     </script>
-
-
-    <hr>
-    <h3 id="Abstract" style="font-family: Calibri;"><b>Abstract</b></h3>
-    <hr>
-    <p class="ex1">
-     <pre style="font-family: Calibri;">
-      This paper explores the potential adavantages of quantum computers in the realm of financial targetting and prediction
-      compared to cuurent computational methods. As financial markets become increasingly more complex, classical algorithims 
-      face disadvantages in processing large datasets and indentifying the necessary patterns. I will analyse key quantum algorithims
-      such as Grover's and Shor's and how they help to enchance predictive accuracy and targeting efficiency. Through comparative 
-      study, I will analyse where quantum computing could outperform current technologies, addressing both technical challenges and
-      practical applications. The findings suggest that alothough quantum computers hold significant promise for further devloping 
-      financial analystics, its widespread uses are contigent upon overcoming already present hardware and algorithimic limitations.
-      This reaseach aims to identify the strengths and weakness between quatum computing and existing methods and also see the potential
-      outcomes for future predictive modeling. 
-     </pre>
-
-     <hr>
-     <h3 id= "Introduction" style="font-family: Calibri;"><b>Introduction</b></h3>
-     <hr>
-     <p class="ex1">
-      <pre style="font-family: Calibri;">
-       Quantum computers represent an advancement in computational methods, with  sigificant implications in many fields, including finance.
-       Traditional computing methods are found to often stuggle to manage the complexity of financial markets, particularly in areas such as 
-       targetting and prediction. As <a href="https://doi.org/10.1038/nature08812"> Ladd et al. (2010) note </a>, quantum computers utilise the principles
-       of quantum mechanics to process information in ways that traditional alogrithims cannot, allowing for better analysis of large data and the 
-       identification of intricate patterns. This possibility makes quantum computing a potential changer in financial analystics. In this paper 
-       I will explore key quantum algorithims, such as Grover's and Shor's, to illustrate the potential advantages they have over traditional methods
-       particularly pertaining to predicitve and targetting efficiency. This would be done through a comparative study. Where I will look through
-       technicla challenges and practical applications of quantum computing in finance.
-      </pre>
-
-    <hr>
-    <h3 id= "Quantum Methodologies" style="font-family: Calibri;"><b>Quantum Methodologies</b></h3>
-    <hr>
-    <p class= "ex1">
-     
-     
-
-     <pre style="font-family: Calibri;">
-     <h4 style="font-family: Calibri;">Grover's Algorithim (Figure 1):</h4> 
-      Grover's alogrithim is designed to search an unsorted database or solving problems with much greater efficiency than classical algorithims <a href="https://doi.org/10.1038/s41467-017-01904-7">(Figgatt et al., 2017)</a>.
-      It can be used to search through an unstructred database containing N items to find a specific item that satisfies the condition. What makes it stand out to 
-      classical alogorithims is they tend to require an average of O(N) evaluations to find the key item but Grover's can do it in O(N^1/2) evaluations. This 
-      is a significant quadratci speed up and is possible because it utilises quantum superposition allowing multiple evalutions simulataneously. While it does
-      not directly predict outcomes, in predicitve analysis it can identify the most impactful features in datasets used for stock price predictions. It can
-      also be used for alogorthimic trading or HFT (high frequency trading) as it cna ehance trading strategies by quickly searching for the best trading signals.
-
-     <h4 style="font-family: Calibri;">Shor's Algorithim (Figure 2):</h4>
-      Shor's alogorithim is designed for integer facorisation, which is the process of decompsoing a composite number into its prime factors. This specific 
-      alogrithim has significant implications for systems that rely on teh difficulty of ffactoring large numbers. The genral number field sieve, which is a
-      classical algorithim for factorising, operates in exponential time whereas Shor's can factoring is polynominal time (O((LogN)^3))). Not only does it use 
-      superposition and entanglemt, allowing multiple possibilites to be explored simulataneously but it also uses quantum fourier transform. Which is used to 
-      analyse the frequency components of a signal. These both make it faster and more efficient to classical alogrithims <a href="https://doi.org/10.1126/science.aad9480">(Monz et al., 2016)</a>.
-     </pre>
-
-     <div class="chart-container">
-       <h4 style="font-family: Calibri;">Figure 1: Comparison of Classical search and Grover's algorithm</h4>
-       <div id="chart_div1" class="chart"></div>
-       <h4 style="font-family: Calibri;">Figure 2: Complexity comparisson for factorisation alogorithms</h4>
-       <div id="chart_div2" class="chart"></div>
-      </div>
-
-    <hr>
-    <h3 id= "Analysis" style="font-family: Calibri;"><b>Analysis</b></h3>
-    <hr>
-    <p class ="ex1">
-     <pre style="font-family: Calibri;">
-      Grover's and Shor's algorithms offer promising advantages in targeting and prediction within financial markets because of their quantum properties, 
-      which gives them quadratic and exponential speed ups compared to classical algorithms <a href=" https://doi.org/10.12928/telkomnika.v18i3.14755">(Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020))</a>.
-      Grover's algorithm achieves quadratic speedup by using quantum superposition and amplitude amplification, allowing it to search unsorted databases in O(SQRT(N)) time, compared to the classical O(N).
-      Shor's algorithm achieves exponential speedup by using quantum parallelism and the quantum Fourier transform to factor large numbers in polynomial time O ((log N) ^3), compared to the exponential time of classical methods
-      It is also presented with challenges of their own.One of the biggest challenges that Grover’s algorithm has is that it is limited by the current quantum hardware limitations as quantum computing is a recently 
-      new field of computing with a lot of nuances to be had. Another disadvantage it could run into is the integration within classical systems as most current institutions 
-      rely on these classical systems. Also, as dataset of financial markets grow Grover’s algorithm might not always be a practical advantage if the data is not structured correctly. 
-      Shor’s algorithm similar disadvantages to Grover’s but it also has specificity issues. Particularly in targeting and prediction. The algorithm is primarily focused 
-      on factoring making its utility within financial context more limited and specific compared to Grover’s. Furthermore, one of Shor’s strengths for efficiently 
-      tackling large factoring efficiently poses as a huge threat to already existing cryptographic methods leading to massive security risks and greater need for financial 
-      institution to implement new cryptographic methods. (Graph in excel)
-      </pre>
-
-      
-
-
-
-    <hr>
-    <h3 id= "Conclusion" style="font-family: Calibri;"><b>Conslusion</b></h3>
-    <hr>
-    <p class="ex1">
-     <pre style="font-family: Calibri;">
-      Both algorithms have great potential for the improvement of targeting and predication within the financial sector. However, in the industries current state, there are 
-      major challenges that need to be resolved such as limitations of quantum technology, data management and integration with existing systems. With ongoing advancements in quantum 
-      computing being necessary to overcome these challenges to be able to fully utilise both these algorithms to their full capabilities
-
-     </pre>
+  <head>
+   <img src = "WebBanner2023.png" alt="Banner" width="1200" height="300">
+   <h1><b> ENG0018 Computer Laboratory 20203/24 </b></h1>
+   <h2>Student URN:6884801 </h2>
    
+   <hr>
+   <h2 style="font-family: Calibri;"><b>Conference paper: To What Extent Are Quantum Computer Be Better at Financial Targeting and Prediction, To Classical Algorithms</b></h2>
+   <hr>
+   
+   <!style for tables>
+   <style>
+    table{font-family: arial, sans-serif;border-collapse: collapse;width: 30%;}
+    td,th {border: 1px solid #dddddd;text-align: left;padding: 8px;}
+    tr:nth-child(even){background-color: #dddddd;}
+   </style>
+   
+   <style>
+    p.ex1{margin-left: 250px;font-family: Calibri;}
+    body {font-family: Calibri;background-color: #FFFFFF;margin-left: 50px;}
+    .chart-container {display: flex;flex-direction: column;align-items: center;gap: 20px;}
+    .chart{width: 900px;height: 500px;}
+   </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart', 'line']});
+    google.charts.setOnLoadCallback(function() {
+     drawChart1();
+     drawChart2();
+    });
+    function drawChart1() {
+     console.log("Drawing chart 1...");
+     var data = new google.visualization.DataTable();
+     data.addColumn('number', 'N');
+     data.addColumn('number', 'Classical Search (O(N))');
+     data.addColumn('number', "Grover's Algorithm (O(√N))");
      
-
+     data.addRows([
+      [1, 1, 1],
+      [2, 2, 1.41],
+      [3, 3, 1.73],
+      [4, 4, 2],
+      [5, 5, 2.24],
+      [6, 6, 2.45],
+      [7, 7, 2.65],
+      [8, 8, 2.83],
+      [9, 9, 3],
+      [10, 10, 3.16],
+      [20, 20, 4.47],
+      [30, 30, 5.47],
+      [40, 40, 6.32],
+      [50, 50, 7.07],
+      [60, 60, 7.74],
+      [70, 70, 8.36],
+      [80, 80, 8.94],
+      [90, 90, 9.48],
+      [100, 100, 10]
+     ]);
+     var options = {
+      title: '',
+      width: 900,
+      height: 500,
+      hAxis: {title: 'N (Size of Dataset)',minValue: 0},
+      vAxis: {title: 'Number of Operations',minValue: 0},
+      series: {0: { color: '#1c91c0' },1: { color: '#f4511e' }},
+      pointsVisible: true,
+      curveType: 'function'
+     };
+     var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
+     chart.draw(data, options);
+    }
+    function drawChart2() {
+     console.log("Drawing Chart 2...");
+     var data = google.visualization.arrayToDataTable([
+      ['N', 'Trial Division O(SQRT(N))', 'Elliptic Curve O(N^1/4)', 'Quadratic Sieve O(e^SQRT(log N))', 'Shor\'s Algorithm'],
+      [1, 1.00, 1.00, 1.00, 0],
+      [2, 1.41, 1.19, 1.73, 0.03],
+      [3, 1.73, 1.32, 2.00, 0.11],
+      [4, 2.00, 1.41, 2.17, 0.22],
+      [5, 2.24, 1.50, 2.31, 0.34],
+      [6, 2.45, 1.57, 2.42, 0.47],
+      [7, 2.65, 1.63, 2.51, 0.60],
+      [8, 2.83, 1.68, 2.59, 0.74],
+      [9, 3.00, 1.73, 2.66, 0.87],
+      [10, 3.16, 1.78, 2.72, 1.00],
+      [20, 4.47, 2.11, 3.13, 2.20],
+      [30, 5.48, 2.34, 3.37, 3.22],
+      [40, 6.32, 2.51, 3.55, 4.11],
+      [50, 7.07, 2.66, 3.68, 4.90],
+      [60, 7.75, 2.78, 3.79, 5.62],
+      [70, 8.37, 2.89, 3.89, 6.28],
+      [80, 8.94, 2.99, 3.97, 6.89],
+      [90, 9.51, 3.09, 4.06, 7.46],
+      [100, 10.05, 3.19, 4.15, 7.98]
+     ]);
+     var options = {
+      title: '',
+      curveType: 'function',
+      legend: { position: 'bottom' },
+      width: 900,
+      height: 500,
+      pointSize: 4,
+      colors:['#1b9e77', '#d95f02', '#7570b3', '#e7298a'],
+      hAxis: {title: 'N'},
+      vAxis: {title: 'Time Complexity'}
+     };
+     var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+     chart.draw(data, options);
+    }
+   </script>
+  </head>
+  
+  <body>
+   <hr>
+   <!table of contents>
+   <table>
+    <tr>
+     <th><h1>Table of contents</h1></th>
+    </tr>
+    <tr>
+     <td><a href="#Abstract">Abstract</td>
+    </tr>
+    <tr>
+     <td><a href="#Analysis and discussion">Analysis and discussion</td>
+    </tr>
+    <tr>
+     <td><a href="#Introduction">Introduction</td>
+    </tr>
+    <tr>
+     <td><a href="#Quantum Methodologies">Quantum Methodologies</td>
+    </tr>
+    <tr>
+     <td><a href="#Analysis">Analysis</td>
+    </tr>
+    <tr>
+     <td><a href="#Conclusion">Conclusion</td>
+    </tr>
+    <tr>
+     <td><a href="#References">Reference</td>
+    </tr>
+   </table>
+   <hr>
+   
+   <p id="date&Time"></p>
+   <script>
+    const d=new Date();
+    document.getElementById("date&Time").innerHTML = d;
+   </script>
+   
+   <hr>
+   <h3 id="Abstract" style="font-family: Calibri;"><b>Abstract</b></h3>
+   <hr>
+   
+   <p class="ex1">
+   <pre style="font-family: Calibri;">
+    This paper explores the potential advantages of quantum computers in the realm of financial targeting and prediction compared to current computational methods. As financial markets become increasingly more complex, 
+    classical algorithms face disadvantages in processing large datasets and identifying the necessary patterns. I will analyse key quantum algorithm such as Grover's and Shor's and how they help to enhance predictive accuracy and targeting
+    efficiency. Through comparative study, I will analyse where quantum computing could outperform current technologies, addressing both technical challenges and practical applications. The findings suggest that although quantum computers 
+    hold significant promise for further developing financial analytics, its widespread uses are contingent upon overcoming already present hardware and algorithmic limitations. This research aims to identify the strengths and weakness 
+    between quantum computing and existing methods and see the potential outcomes for future predictive modelling.
+   </pre>
+   
+   <hr>
+   <h3 id= "Introduction" style="font-family: Calibri;"><b>Introduction</b></h3>
+   <hr>
+   
+   <p class="ex1">
+   <pre style="font-family: Calibri;">
+    Quantum computers represent an advancement in computational methods, with significant implications in many fields, including finance. Traditional computing methods are found to often struggle to manage the complexity of 
+    financial markets, particularly in areas such as targeting and prediction. As <a href="https://doi.org/10.1038/nature08812"> Ladd et al. (2010) note </a>, quantum computers utilise the principles of quantum mechanics to 
+    process information in ways that traditional algorithms cannot, allowing for better analysis of large data and the identification of intricate patterns. This possibility makes quantum computing a potential changer 
+    in financial analytics. In this paper I will explore key quantum algorithms, such as Grover's and Shor's, to illustrate the potential advantages they have over traditional methods particularly pertaining to predictive and targeting 
+    efficiency. This would be done through a comparative study. Where I will look through technical challenges and practical applications of quantum computing in finance.
+   </pre>
+   
+   <hr>
+   <h3 id= "Quantum Methodologies" style="font-family: Calibri;"><b>Quantum Methodologies</b></h3>
+   <hr>
+   
+   <p class= "ex1">
+   <pre style="font-family: Calibri;">
+    <h4 style="font-family: Calibri;">Grover's Algorithim (Figure 1):</h4> 
+    Grover's algorithm is designed to search an unsorted database or solving problems with much greater efficiency than classical algorithms  <a href="https://doi.org/10.1038/s41467-017-01904-7">(Figgatt et al., 2017)</a>.
+    It can be used to search through an unstructured database containing N items to find a specific item that satisfies the condition. What makes it stand out to classical algorithms is they tend to require an average of O(N) evaluations 
+    to find the key item, but Grover's can do it in O(N^1/2) evaluations. This is a significant quadratic speed up and is possible because it utilises quantum superposition allowing multiple evaluations simultaneously. While it does not 
+    directly predict outcomes, in predictive analysis it can identify the most impactful features in datasets used for stock price predictions. It can also be used for algorithmic trading or 
+    HFT (high frequency trading) as it can enhance trading strategies by quickly searching for the best trading signals
+    
+    <h4 style="font-family: Calibri;">Shor's Algorithim (Figure 2):</h4>
+    Shor's algorithm is designed for integer factorisation, which is the process of decomposing a composite number into its prime factors. This specific algorithm has significant implications for systems that rely on the difficulty 
+    of factoring large numbers. The general number field sieve, which is a classical algorithm for factorising, operates in exponential time whereas Shor's can factor in polynomial time (O((LogN)^3))). Not only does it use superposition 
+    and entanglement, allowing multiple possibilities to be explored simultaneously but it also uses quantum Fourier transform. Which is used to analyse the frequency components of a signal. 
+    These both make it faster and more efficient to classical algorithms  <a href="https://doi.org/10.1126/science.aad9480">(Monz et al., 2016)</a>.
+   </pre>
+   
+   <div class="chart-container">
+    <h4 style="font-family: Calibri;">Figure 1: Comparison of Classical search and Grover's algorithm</h4>
+    <div id="chart_div1" class="chart"></div>
+    <h4 style="font-family: Calibri;">Figure 2: Complexity comparisson for factorisation alogorithms</h4>
+    <div id="chart_div2" class="chart"></div>
+   </div>
+   
+   <hr>
+   <h3 id= "Analysis" style="font-family: Calibri;"><b>Analysis</b></h3>
+   <hr>
+   
+   <p class ="ex1">
+   <pre style="font-family: Calibri;">
+    Grover's and Shor's algorithms offer promising advantages in targeting and prediction within financial markets because of their quantum properties, which gives them quadratic and exponential speed 
+    ups compared to classical algorithms  <a href=" https://doi.org/10.12928/telkomnika.v18i3.14755">(Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020))</a>.Grover's algorithm achieves quadratic speedup by using quantum superposition and amplitude amplification, allowing it 
+    to search unsorted databases in O(SQRT(N)) time, compared to the classical O(N). Shor's algorithm achieves exponential speedup by using quantum parallelism and the quantum Fourier transform to factor large numbers in polynomial 
+    time O ((log N) ^3), compared to the exponential time of classical methods It is also presented with challenges of their own. One of the biggest challenges that Grover’s algorithm has is that it is limited by the current quantum 
+    hardware limitations as quantum computing is a recently new field of computing with a lot of nuances to be had. Another disadvantage it could run into is the integration within classical systems as most current institutions 
+    rely on these classical systems. Also, as dataset of financial markets grow Grover’s algorithm might not always be a practical advantage if the data is not structured correctly. Shor’s algorithm similar disadvantages to Grover’s but it 
+    also has specificity issues. Particularly in targeting and prediction. The algorithm is primarily focused on factoring making its utility within financial context more limited and specific compared to Grover’s. Furthermore, one of Shor’s 
+    strengths for efficiently tackling large factoring efficiently poses as a huge threat to already existing cryptographic methods leading to massive security risks and greater need for financial institution to implement new cryptographic methods.
+    
     <hr>
-    <h3 id= "References"style="font-family: Calibri;"><b>References</b></h3>
+    <h3 id= "Conclusion" style="font-family: Calibri;"><b> Conclusion</b></h3>
     <hr>
-     <p class ="ex1">
-      <pre style="font-family: Calibri;">
-       <a href="https://doi.org/10.1038/nature08812">Ladd, T. D., Jelezko, F., Laflamme, R., Nakamura, Y., O’Brien, J. L., & Monroe, C. (2010). <i>Quantum computers.</i> Nature (London), 464(7285), 45–53.</a>
-       <a href="https://doi.org/10.12928/telkomnika.v18i3.14755">Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020). <i>Web-app realization of Shor’s quantum factoring algorithm and Grover’s quantum search algorithm.</i> Telkomnika, 18(3), 1319–1330.</a>
-       <a href="https://doi.org/10.1126/science.aad9480">Monz, T., Nigg, D., Martinez, E. A., Brandl, M. F., Schindler, P., Rines, R., Wang, S. X., Chuang, I. L., & Blatt, R. (2016). <i>Realization of a scalable Shor algorithm.</i> Science (American Association for the Advancement of Science), 351(6277), 1068–1070.</a>
-       <a href="https://doi.org/10.1038/s41467-017-01904-7">Figgatt, C., Maslov, D., Landsman, K. A., Linke, N. M., Debnath, S., & Monroe, C. (2017). <i>Complete 3-Qubit Grover search on a programmable quantum computer.</i> Nature Communications, 8(1), 1918–1919.</a>
-      </pre>
-
-
-
-
-
-
-   </body>
+    
+    <p class="ex1">
+    <pre style="font-family: Calibri;">
+     Both algorithms have great potential for the improvement of targeting and predication within the financial sector.However, in the industries current state, there are major challenges that need to be resolved such as limitations of 
+     quantum technology, data management and integration with existing systems. With ongoing advancements in quantum computing being necessary to overcome these challenges to be able to fully utilise both these algorithms to their full capabilities.
+    </pre>
+     
+     <hr>
+     <h3 id= "References"style="font-family: Calibri;"><b>References</b></h3>
+     <hr>
+     
+    <p class ="ex1">
+    <pre style="font-family: Calibri;">
+     <a href="https://doi.org/10.1038/nature08812">Ladd, T. D., Jelezko, F., Laflamme, R., Nakamura, Y., O’Brien, J. L., & Monroe, C. (2010). <i>Quantum computers.</i> Nature (London), 464(7285), 45–53.</a>
+     <a href="https://doi.org/10.12928/telkomnika.v18i3.14755">Wicaksana, A., Anthony, A., & Wicaksono, A. W. (2020). <i>Web-app realization of Shor’s quantum factoring algorithm and Grover’s quantum search algorithm.</i> Telkomnika, 18(3), 1319–1330.</a>
+     <a href="https://doi.org/10.1126/science.aad9480">Monz, T., Nigg, D., Martinez, E. A., Brandl, M. F., Schindler, P., Rines, R., Wang, S. X., Chuang, I. L., & Blatt, R. (2016). <i>Realization of a scalable Shor algorithm.</i> Science (American Association for the Advancement of Science), 351(6277), 1068–1070.</a>
+     <a href="https://doi.org/10.1038/s41467-017-01904-7">Figgatt, C., Maslov, D., Landsman, K. A., Linke, N. M., Debnath, S., & Monroe, C. (2017). <i>Complete 3-Qubit Grover search on a programmable quantum computer.</i> Nature Communications, 8(1), 1918–1919.</a>
+    </pre>
+    
+  </body>
  </html>
