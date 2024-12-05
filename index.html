@@ -40,20 +40,6 @@
       background-color: #FFFFFF;
       margin-left: 50px;
      }
-
-
-    </style>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <style>
-     .mySlides {display:none;}
-    </style>
-
-    <title>Comparison of Classical Search vs. Grover's Algorithm</title>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <style>
      .chart-container {
       display: flex;
       justify-content: space-between;
@@ -62,7 +48,17 @@
      .chart{
       width: 48%;
       height: 500px;
+     }
+
+
     </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    
+   
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart', 'line']});
         google.charts.setOnLoadCallback(drawChart1);
@@ -121,7 +117,7 @@
                 pointsVisible: true
             };
 
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
             chart.draw(data, options);
         }
      function drawChart2() {
