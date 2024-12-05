@@ -101,16 +101,13 @@
             ]);
 
             var options = {
-                chart: {
-                    title: 'Comparison of Classical Search vs. Grover\'s Algorithm',
-                    subtitle: 'Classical Search (O(N)) vs. Grover\'s Algorithm (O(√N))',
-                },
                 width: 900,
                 height: 500,
                 hAxis: {title: 'N (Size of Dataset)',minValue: 0},
                 vAxis: {title: 'Number of Operations',minValue: 0},
                 series: {0: { color: '#1c91c0' },1: { color: '#f4511e' }},
                 pointsVisible: true
+                curveType: 'function'
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
@@ -119,36 +116,38 @@
      function drawChart2() {
             console.log("Drawing Chart 2...");
             var data = google.visualization.arrayToDataTable([
-                ['N', 'Trial Division O(SQRT(N))', 'Elliptic Curve O(N^1/4)', 'Quadratic Sieve O(e^SQRT(log N))', 'General Number Field Sieve O(e^(1.9 * (log N)^(1/3)))'],
-                [1, 1, 1, 1, 1],
-                [2, 1.41, 1.41, 1.41, 1.41],
-                [3, 1.73, 1.61, 1.59, 1.56],
-                [4, 2, 1.73, 1.72, 1.69],
-                [5, 2.24, 1.84, 1.83, 1.79],
-                [6, 2.45, 1.92, 1.90, 1.86],
-                [7, 2.65, 2.00, 1.98, 1.93],
-                [8, 2.83, 2.08, 2.06, 1.99],
-                [9, 3, 2.16, 2.14, 2.05],
-                [10, 3.16, 2.24, 2.22, 2.11],
-                [20, 4.47, 2.83, 2.77, 2.46],
-                [30, 5.48, 3.16, 3.10, 2.76],
-                [40, 6.32, 3.46, 3.40, 3.02],
-                [50, 7.07, 3.74, 3.67, 3.26],
-                [60, 7.75, 4.00, 3.93, 3.49],
-                [70, 8.37, 4.24, 4.17, 3.71],
-                [80, 8.94, 4.47, 4.40, 3.92],
-                [90, 9.49, 4.70, 4.62, 4.12],
-                [100, 10, 4.89, 4.83, 4.31]
+                ['N', 'Trial Division O(SQRT(N))', 'Elliptic Curve O(N^1/4)', 'Quadratic Sieve O(e^SQRT(log N))', 'Shor\'s Algorithm'],
+                [1, 1.00, 1.00, 1.00, 0],
+                [2, 1.41, 1.19, 1.73, 0.03],
+                [3, 1.73, 1.32, 2.00, 0.11],
+                [4, 2.00, 1.41, 2.17, 0.22],
+                [5, 2.24, 1.50, 2.31, 0.34],
+                [6, 2.45, 1.57, 2.42, 0.47],
+                [7, 2.65, 1.63, 2.51, 0.60],
+                [8, 2.83, 1.68, 2.59, 0.74],
+                [9, 3.00, 1.73, 2.66, 0.87],
+                [10, 3.16, 1.78, 2.72, 1.00],
+                [20, 4.47, 2.11, 3.13, 2.20],
+                [30, 5.48, 2.34, 3.37, 3.22],
+                [40, 6.32, 2.51, 3.55, 4.11],
+                [50, 7.07, 2.66, 3.68, 4.90],
+                [60, 7.75, 2.78, 3.79, 5.62],
+                [70, 8.37, 2.89, 3.89, 6.28],
+                [80, 8.94, 2.99, 3.97, 6.89],
+                [90, 9.51, 3.09, 4.06, 7.46],
+                [100, 10.05, 3.19, 4.15, 7.98]
+                
             ]);
 
             var options = {
-                title: 'Complexity Comparison for Different Factorization Algorithms',
+                
                 curveType: 'function',
                 legend: { position: 'bottom' },
                 width: 900,
                 height: 500,
-                hAxis: {
-                    title: 'N'},
+                pointSize: 4,
+                colors:['#1b9e77', '#d95f02', '#7570b3', '#e7298a'],
+                hAxis: {title: 'N'},
                 vAxis: {title: 'Time Complexity'}
             };
 
@@ -278,7 +277,7 @@
       <div class="chart-container">
        <h4>Figure 1: Comparison of Classical search and Grover's algorithm</h4>
        <div id="chart_div1" class="chart"></div>
-       <h4>Figure 2: Complexity comparisson for factorisation alogorithm's</h4>
+       <h4>Figure 2: Complexity comparisson for factorisation alogorithms</h4>
        <div id="chart_div2" class="chart"></div>
       </div>
     
